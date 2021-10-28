@@ -5,7 +5,7 @@ const config = dotenv.config({
     path:path.resolve(process.cwd(), 'src', '.env')
 })
 
-const PORT = process.env.SERVER_PORT
+const PORT = process.env.PORT ?? process.env.SERVER_PORT
 
 
 const pgConfig = {
