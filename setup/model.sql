@@ -74,4 +74,5 @@ create table complaint(
     user_id int null references users(id),
     time varchar(64) not null,
     complaint text not null
+    -- user_telegram_id bigint
 );
