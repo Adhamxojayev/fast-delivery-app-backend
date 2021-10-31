@@ -66,13 +66,14 @@ create table orders (
     time varchar(64) not null,
     product_id int not null references products(id), 
     product_count int not null default 1,
-    payment varchar(64) not null default 'disabled'
+    payment varchar(64) not null default 'disabled',
+    status varchar(64) not null default 'qabul' -- yakun bekor yetkazish
 );
 
 create table complaint(
     id serial primary key,
     user_id int null references users(id),
     time varchar(64) not null,
-    complaint text not null
-    -- user_telegram_id bigint
+    complaint text not null,    
+    user_telegram_id bigint
 );
