@@ -35,13 +35,11 @@ export default {
     login: async ({name,password}) => {
         try {
             return await fetch(false, 
-            `select * from admin where name = $1 and password = $2`,name, md5(password))
+            `select * from admin where name = $1 and password = $2`, name, md5(password))
         } catch (error) {
             console.error(error);
         }
     }
 }
-
-
 
 

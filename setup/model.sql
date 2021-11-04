@@ -24,7 +24,7 @@ create table categories (
     status varchar(64) not null default 'active' 
 );
 
-create table sub_categories (
+create table     (
     id serial primary key,
     category_id int not null references categories(id),    
     name varchar(128) not null,
