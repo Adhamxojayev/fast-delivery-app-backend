@@ -5,6 +5,14 @@ import router from './modules/index.js'
 
 const app = express()
 
+
+app.use((req,res,next) => {
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Content-Type, Access-Control-Allow-Origin');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST, DELETE, PUT');
+    next()
+})
+
 app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
