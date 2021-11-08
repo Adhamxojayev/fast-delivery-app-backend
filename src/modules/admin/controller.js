@@ -75,7 +75,11 @@ export default {
             if(data.length){
                 res.cookie('userId', token)
                 res.cookie('user', user)
-                res.redirect('http://localhost:3000/orders')
+                res.json({
+                    status: 200,
+                    message: 'you are register',
+                    data: data
+                })
             }else throw new Error('name or password error')
         } catch (error) {
             res.json({
