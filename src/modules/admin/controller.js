@@ -71,6 +71,7 @@ export default {
             let data = await model.login(req.body)
             let token = jwt.sign(data[0].id)
             let user = jwt.sign(data[0].status)
+            console.log(data);
             if(data.length){
                 res.cookie('userId', token)
                 res.cookie('user', user)
@@ -85,3 +86,4 @@ export default {
         }
     }
 }
+
