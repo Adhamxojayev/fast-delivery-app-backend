@@ -11,8 +11,9 @@ const fetch = async (control,query, ...arr) => {
         return rows
     } catch (error) {
         console.log(error.message);
+    }finally{
+        await client.release()
     }
-    await client.release()
     
 }
 
