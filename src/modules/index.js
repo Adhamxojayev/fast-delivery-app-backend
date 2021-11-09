@@ -5,6 +5,7 @@ import productCategoryRouter from './product-category/router.js'
 import productsRouter from './products/router.js'
 import ordersRouter from './orders/router.js'
 import driversRouter from './drivers/router.js'
+import usersRouter from './users/router.js'
 
 export default [
     adminRouter,
@@ -13,5 +14,6 @@ export default [
     productCategoryRouter,
     productsRouter,
     ordersRouter,
-    driversRouter
+    driversRouter,
+    usersRouter
 ]
