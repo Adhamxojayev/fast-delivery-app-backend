@@ -19,7 +19,20 @@ export default {
     },
     get: async () => {
         try {
-            return await fetch(true, `select * from orders`)
+            return await fetch(true, `select
+                o.id,
+                o.time,
+                u.name,
+                u.phone,
+                o.product_count,
+                sum(p.price * o.product_count) as price,
+                d.car_number,
+                o.status as status
+            from orders o
+            join users u on u.id = o.user_id
+            join products p on p.id = o.product_id
+            join drivers d on d.id = o.driver_id
+            group by o.id, o.time, u.name, u.phone, d.car_number,o.product_count`)
         } catch (error) {
             console.error(error);
         }
